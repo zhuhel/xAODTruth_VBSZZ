@@ -1,0 +1,4 @@
+#!/bin/bash
+
+$ROOTCOREDIR/scripts/external_link.sh
+rc --internal ln $ROOTCORECMT/local/share/LHAPDF $ROOTCOREBIN/data/Asg_Lhapdf_LHAPDF

@@ -1,0 +1,7 @@
+2015-11-03 Nils Krumnack <Nils.Erik.Krumnack@cern.ch>
+	* switched the compilation to single core mode
+	* going into Asg_Lhapdf-06-01-05-01
+
+2015-10-27 Nils Krumnack <Nils.Erik.Krumnack@cern.ch>
+	* made a new tag for version 6.1.5
+	* going into Asg_Lhapdf-06-01-05

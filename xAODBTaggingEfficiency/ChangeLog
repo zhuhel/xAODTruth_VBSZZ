@@ -1,0 +1,104 @@
+2016-06-24 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool: in systematics names (as visible to users), replace spaces with underscores
+	* BTaggingEfficiencyToolTester: update to MV2c10 and May 31 CDI file
+	* Tagging as xAODBTaggingEfficiency-00-00-36
+
+2016-05-10 Michael Ughetto <mughetto@cern.ch>
+	* BTaggingSelectionTool: allowing MV2c10 working points
+	* BTaggingSelectionToolTester: simple testing using the pt, eta, weight signature
+2016-05-03 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool: rename "continuous" to "Continuous"
+	* Tagging as xAODBTaggingEfficiency-00-00-33
+
+2016-04-23 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Added a CMakeLists.txt file to the package, to be able
+	  to build it correctly in devval.
+	* Added dictionaries for the interface classes explicitly.
+	* Tagging as xAODBTaggingEfficiency-00-00-32
+
+2016-03-04 Snezana Nektarijevic <snezana.nektarijevic@cern.ch>, Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool:
+	  - adding the possibility of retrieving efficiencies and SFs for a jet given its kinematics explicitly rather than an xAOD::Jet object
+	  - initialise pointer to CDI object (to stop tests from complaining)
+	  - in the tester code, add checks on all setProperty() calls (to stop the StatusCode end-of-job summary from complaining about unchecked successes)
+	* tagging as xAODBTaggingEfficiency-00-00-31
+
+2016-02-11 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>
+	* BTaggingSelectionTool:
+	  - default maxRangePt for AntiKt2Trackjets is 400 GeV
+          - default maxRangePt for AntiKt4Trackjets is 500 GeV
+	* tagging as xAODBTaggingEfficiency-00-00-30
+2016-01-20 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>
+	* BTaggingSelectionTool:
+	  - Moving continuous tagging to a 5 tagweight bins setup
+	* tagging as xAODBTaggingEfficiency-00-00-29
+2016-01-15 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>
+	* BTaggingSelectionTool:
+	  - Adding simplified signature to getQuantile()
+	  - Adding IParticle signature to getQuantile()
+	* tagging as xAODBTaggingEfficiency-00-00-28
+2016-01-12 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>
+	* BTaggingSelectionTool:
+	  - Remove AntiKt3PV0TrackJets from the supported jet collections. Replaced it with AntiKt4PV0TrackJets (no CDI file for them yet).
+	  - Adding a "Continuous" operating point option and the corresponding cut values reading
+	  - Modified getQuantile(xAOD::jet) to use the bins defined by the "Continuous" OP
+	  - Tagging as xAODBTaggingEfficiency-00-00-27
+2015-12-08 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool: remove constraints on non-b-tagging related variations in applySystematicVariation()
+	* tester code: update to October 2015 CDI file (using different naming convention for tagger operating points)
+	* tagging as xAODBTaggingEfficiency-00-00-26
+
+2015-10-27 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* test destructor in BTaggingEfficiencyToolTester code
+	* tagging as xAODBTaggingEfficiency-00-00-25
+
+2015-10-26 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool: add a proper destructor!
+	* tagging as xAODBTaggingEfficiency-00-00-24
+
+2015-10-14 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>
+	* BTaggingSelectionTool: allow for track jets and for relative cuts; bug fix to high-pt protection
+	* tagging as xAODBTaggingEfficiency-00-00-23
+
+2015-08-27 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingSelectionTool: build in extra protection against null BTagging object
+	* tagging as xAODBTaggingEfficiency-00-00-21
+
+2015-08-10 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* BTaggingEfficiencyTool modifications:
+	  - allow for "continuous tagging" use of other MVA taggers than MV1
+	  - bug fix for "extrapolation from charm" uncertainty (NB this also needs CalibrationDataInterface-00-05-09 or newer):
+	    o  in the SFEigen model this wasn't indexed correctly, meaning that the effective uncertainty returned was always 0
+	    o  in the Envelope model it wasn't implemented properly, causing code to fail
+	  - add "FT_EFF_" prefixes for the uncertainties generally encountered in either the SFEigen or Envelope model
+	    (user-specified named uncertainties are not touched by this)
+	* remove testCDI.root (no longer needed) and the spurious .env file (never used by this package)
+	* tagging as xAODBTaggingEfficiency-00-00-20
+
+2015-07-30 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* add printout messages in case of error returns of main methods
+	* tagging as xAODBTaggingEfficiency-00-00-19
+
+2015-07-17 Christian Luedtke <cluedtke@cern.ch>, Michael Ughetto <mughetto@cern.ch>, Valerio Dao <vdao@cern.ch>
+	* add first version of BTaggingSelectionTool
+	* tagging as xAODBTaggingEfficiency-00-00-18
+
+2015-07-03 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* add other BTaggingEfficiencyTool public methods also as part of the IBTaggingEfficiencyTool interface (on request of TopAnalysis etc.)
+	* remove leading/trailing whitespace from property strings
+	* tagging as xAODBTaggingEfficiency-00-00-17
+
+2015-05-20 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* change BTaggingEfficiencyToolTester code to use the new pre-recommendations file (on CVMFS) and MV2c20 tagger
+	* tagging as xAODBTaggingEfficiency-00-00-16
+
+2015-05-20 Frank Filthaut <F.Filthaut@science.ru.nl>
+	* implement (steering of) eigenvector variation reduction
+	* implement use of exclusive hadron / cone based labelling, and make it default
+	* tagging as xAODBTaggingEfficiency-00-00-15
+
+2015-02-11 Attila Krasznahorkay <Attila.Krasznahorkay@cern.ch>
+	* Disabled the generation of some additional dictionaries with
+	  ROOT 6 to get rid of some runtime warnings in
+	  AnalysisBase-2.1.X.
+	* Tagging as xAODBTaggingEfficiency-00-00-14

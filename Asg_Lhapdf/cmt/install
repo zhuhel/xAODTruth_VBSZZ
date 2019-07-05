@@ -1,0 +1,12 @@
+#!/bin/bash
+
+source $ROOTCOREDIR/scripts/external_download.sh
+
+./configure --prefix="$target" `$ROOTCOREDIR/scripts/get_field.sh "$options_file" configure_flags`
+make -j 1
+make -j 1 install
+
+rc download_file --md5sum 139d93c4ed265d227294d8f8c72d6ef8 Asg_Lhapdf/NNPDF23_nlo_as_0118.tar.gz /cvmfs/atlas.cern.ch/repo/sw/ASG/RootCoreExternal/v002/NNPDF23_nlo_as_0118.tar.gz /afs/cern.ch/atlas/www/GROUPS/COMPUTING/projects/RootCoreExternal/v002/NNPDF23_nlo_as_0118.tar.gz http://atlas-computing.web.cern.ch/atlas-computing/projects/RootCoreExternal/v002/NNPDF23_nlo_as_0118.tar.gz http://www.hepforge.org/archive/lhapdf/pdfsets/6.1/NNPDF23_nlo_as_0118.tar.gz 
+
+cd $target/share/LHAPDF
+tar xfz $ROOTCOREBIN/download/Asg_Lhapdf/NNPDF23_nlo_as_0118.tar.gz
